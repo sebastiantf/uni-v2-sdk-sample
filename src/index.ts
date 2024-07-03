@@ -12,8 +12,18 @@ import { getRoute } from './lib/route';
   );
   const WETH = WETH9[ChainId.MAINNET];
 
+  // random coins
+  // created 15hrs ago
+  const NAV = new Token(
+    ChainId.MAINNET,
+    '0x1Ae38Aa04C482C7507c5Ec6CEF7149A1D29109Ec',
+    18,
+    'NAV',
+    'Navaix'
+  );
+
   const fromToken = WETH;
-  const toToken = DAI;
+  const toToken = NAV;
 
   logger.debug('main:: before getRoute(): ', new Date());
   const route = await getRoute(toToken, fromToken);
