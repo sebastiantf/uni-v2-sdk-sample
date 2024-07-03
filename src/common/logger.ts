@@ -2,7 +2,7 @@ import * as winston from 'winston';
 import * as util from 'util';
 
 export const logger = winston.createLogger({
-  level: 'info',
+  level: 'debug',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.splat(),

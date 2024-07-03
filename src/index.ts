@@ -10,7 +10,9 @@ import { getRoute } from './lib/route';
   );
   const WETH = WETH9[ChainId.MAINNET];
 
+  logger.debug('main:: before getRoute(): ', new Date());
   const route = await getRoute(DAI, WETH);
+  logger.debug('main:: after getRoute(): ', new Date());
 
   logger.info(route.midPrice.toSignificant(6));
   logger.info(route.midPrice.invert().toSignificant(6));
