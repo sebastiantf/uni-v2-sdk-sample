@@ -53,7 +53,8 @@ export const RPC_PROVIDERS: Record<number, string> = {
     process.env.POLYGON_ZKEVM_RPC ?? 'https://rpc.ankr.com/polygon_zkevm',
 
   [CHAIN_IDS.BASE_CHAIN_ID]:
-    process.env.BASE_RPC ?? 'https://base.llamarpc.com',
+    // process.env.BASE_RPC ?? 'https://base.llamarpc.com',
+    process.env.BASE_RPC ?? 'https://rpc.ankr.com/base',
 
   [CHAIN_IDS.ZORA_CHAIN_ID]: process.env.ZORA_RPC ?? 'https://rpc.zora.energy',
 
