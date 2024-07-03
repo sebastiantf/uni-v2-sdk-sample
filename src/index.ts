@@ -19,8 +19,11 @@ import { getRoute } from './lib/route';
   const route = await getRoute(toToken, fromToken);
   logger.debug('main:: after getRoute(): ', new Date());
 
-  logger.info('fromToken', fromToken.name);
-  logger.info('toToken', toToken.name);
+  logger.info('fromToken', {
+    name: fromToken.name,
+    address: fromToken.address,
+  });
+  logger.info('toToken', { name: toToken.name, address: toToken.address });
   logger.info('midPrice from → to', route.midPrice.toSignificant(6));
   logger.info('midPrice to → from', route.midPrice.invert().toSignificant(6));
 })();
