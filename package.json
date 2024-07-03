@@ -1,0 +1,28 @@
+{
+  "name": "ts-eth-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sebastiantf/ts-eth-template.git",
+  "author": "Sebastian T F <sebastian.tharakan97@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn clean; yarn typechain; tsc",
+    "clean": "rm -rf dist",
+    "dev": "yarn ts-node src/index.ts",
+    "start": "yarn build && node dist/index.js",
+    "typechain": "typechain --target ethers-v5 --out-dir ./src/types './abi/*.json'",
+    "postinstall": "yarn build"
+  },
+  "devDependencies": {
+    "@typechain/ethers-v5": "^10.2.0",
+    "@types/node": "^18.7.16",
+    "dotenv": "^16.0.3",
+    "ts-node": "^10.9.1",
+    "typechain": "^8.1.1",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "ethers": "^5.7.2",
+    "winston": "^3.8.2"
+  }
+}
