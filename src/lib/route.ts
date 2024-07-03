@@ -4,12 +4,12 @@ import { logger } from '../common/logger';
 import { createPair } from './pair';
 
 export async function getRoute(
-  tokenA: Token,
-  tokenB: Token
+  toToken: Token,
+  fromToken: Token
 ): Promise<Route<Token, Token>> {
   logger.debug('getRoute:: before createPair(): ', new Date());
-  const pair = await createPair(tokenA, tokenB);
+  const pair = await createPair(toToken, fromToken);
   logger.debug('getRoute:: after createPair(): ', new Date());
 
-  return new Route([pair], tokenB, tokenA);
+  return new Route([pair], fromToken, toToken);
 }
